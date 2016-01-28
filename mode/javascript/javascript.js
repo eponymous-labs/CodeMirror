@@ -614,7 +614,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     return pass(statement);
   }
   function afterImport(type) {
-    if (type == "string") return cont();
+    if (type != "string") return cont();
     return pass(importSpec, maybeFrom);
   }
   function importSpec(type, value) {
